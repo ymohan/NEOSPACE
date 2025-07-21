@@ -214,7 +214,7 @@ nav ul li a {
 
 nav ul li.active,
 nav ul li:hover {
-  color: #fff;
+  color: #fff;   
 }
 
 nav ul li#blob,

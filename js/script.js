@@ -362,15 +362,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     modalContent.addEventListener('touchmove', (e) => {
-      if (!startX) return;
-      const diffX = e.touches[0].clientX - startX;
-      if (Math.abs(diffX) > 50) {
-          isSwipe = true;
-          e.preventDefault();
-          const progress = Math.min(Math.abs(diffX) / 200, 1);
-          modalContent.style.transform = `scale(${1 - progress * 0.2})`;
-          modalContent.style.opacity = 1 - progress * 0.3;
-      }
+        if (!startX) return;
+        const diffX = e.touches[0].clientX - startX;
+        if (Math.abs(diffX) > 50) {
+            isSwipe = true;
+            e.preventDefault();
+            const progress = Math.min(Math.abs(diffX) / 200, 1);
+            modalContent.style.transform = `scale(${1 - progress * 0.2})`;
+            modalContent.style.opacity = 1 - progress * 0.3;
+        }
     }, { passive: false });
 
     modalContent.addEventListener('touchend', (e) => {
