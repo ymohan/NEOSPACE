@@ -214,11 +214,9 @@ nav ul li a {
 
 nav ul li.active,
 nav ul li:hover {
-  color: #fff;   
+  color: #fff;
 }
-
-nav ul li#blob,
-nav ul li#blob-mobile {
+nav ul li#blob{
   position: absolute;
   background-color: #D28F51;
   border-radius: 1.5625rem;
