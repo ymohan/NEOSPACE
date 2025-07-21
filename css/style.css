@@ -1148,6 +1148,10 @@ nav li#blob-secondary {
   .right-col .description {
     font-size: 0.95rem;
   }
+  .overview-content{
+    padding: 3rem 0 0 0;
+  }
+
 }
 /*what we do */
 :root{
@@ -2176,6 +2180,13 @@ nav li#blob-secondary {
 	.main-title {
 		font-size: 1.75rem;
 	}
+  .images-grid .image-item{
+    display: none;
+  }
+
+   .overview-content{
+    padding: 0;
+  }
 
 	.image-item.large {
 		display: block;
