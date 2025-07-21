@@ -728,10 +728,8 @@ nav ul li#blob{
 }
 
 .swiper-pagination-horizontal{
-	display: flex;
-	width: 6.2rem !important;
-	left: 50% !important;
-	background: #fff;
+	display: flex;	
+	left: 50% !important;	
 	border-radius: 3.125rem;
 	padding: 0.45rem;
 	justify-content: center;
@@ -857,9 +855,9 @@ nav ul li#blob{
   text-align: left;
   line-height: 0.75rem;
   font-size: 0.75rem;
-  color: #000;
+  color: #D28F51;
   opacity: 0.3;
-  background: #210a00;
+  background: #fff;
   transition: all 0.2s ease;
 }
 
