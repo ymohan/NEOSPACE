@@ -1451,10 +1451,11 @@ nav li#blob-secondary {
   transition: var(--transition);
 }
 
-.icon {
+.contact-list .icon {
 	width: 2.5rem;
 	height: 2.5rem;
 	fill: #8C6E5D;
+  padding: 0 0 0 1rem;
 }
 :root{
   --transition: 500ms all ease;
@@ -2180,11 +2181,7 @@ nav li#blob-secondary {
 	.main-title {
 		font-size: 1.75rem;
 	}
-  .images-grid .image-item{
-    display: none;
-  }
-
-   .overview-content{
+ .overview-content{
     padding: 0;
   }
 
@@ -2198,8 +2195,11 @@ nav li#blob-secondary {
 	}
 
 	.counters-section {
-		padding: 3.75rem 0.9375rem;
+		padding: 1rem 0.9375rem;
 	}
+  #about {
+    padding: 1rem 0 1rem 0;
+  }
 
 	.counters-title h2 {
 		font-size: 2rem;
@@ -3490,7 +3490,7 @@ body.modal-open {
 /*contact*/
 @media (max-width: 1399px) {
     .contact-form-wrap {
-      padding: 45px 40px;
+      padding: 1rem;
     }
 }
 @media (max-width: 991px) {
@@ -3724,7 +3724,7 @@ body.modal-open {
     margin-bottom: 5rem;
 }
 .contact-form-wrap {
-  padding: 45px 3.125rem;
+  padding: 1rem 1.125rem;
   background-color: #FFF;
   border-radius: 1.25rem;
   margin-left: 3.125rem;
