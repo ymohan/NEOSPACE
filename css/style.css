@@ -1667,9 +1667,7 @@ nav li#blob-secondary {
   margin-bottom: 8px;
   backdrop-filter: blur(4px);
 }
-.swiper {
-  overflow: visible; /* prevent button clipping */
-}
+
 /*Brands*/
 #brand-logos {
    padding: 3rem 0;

@@ -91,22 +91,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Navigation Blob Effect
   const blob = document.getElementById('blob');
   let activeItem = null;
-
   if (blob) {
     const navItems = document.querySelectorAll('nav ul li:not(#blob)');
     activeItem = document.querySelector('nav ul .active') || navItems[0];
 
-    const updateBlob = (target = activeItem) => {
-      if (!target) return;
-      Object.assign(blob.style, {
-        width: `${target.clientWidth}px`,
-        height: `${target.clientHeight}px`,
-        left: `${target.offsetLeft}px`,
-        top: `${target.offsetTop}px`,
-      });
-    };
+    function updateBlob(target = activeItem) {
+      if (target) {
+        blob.style.width = `${target.clientWidth}px`;
+        blob.style.height = `${target.clientHeight}px`;
+        blob.style.left = `${target.offsetLeft}px`;
+        blob.style.top = `${target.offsetTop}px`;
+      }
+    }
 
-    const animateBlob = (from, to) =>
+    function animateBlob(from, to) {
       blob.animate(
         [
           { left: `${from.offsetLeft}px`, width: `${from.clientWidth}px` },
@@ -118,66 +116,20 @@ document.addEventListener('DOMContentLoaded', () => {
           fill: 'forwards',
         }
       );
-
-    const updateTextColor = (progress = 1) => {
-      const blobRect = blob.getBoundingClientRect();
-      navItems.forEach((item) => {
-        const { left, right, top, bottom } = item.getBoundingClientRect();
-        const isUnder =
-          blobRect.left <= right &&
-          blobRect.right >= left &&
-          blobRect.top <= bottom &&
-          blobRect.bottom >= top;
-
-        if (item.classList.contains('active')) {
-          const val = Math.round(51 * (1 - progress) + 255 * progress);
-          item.style.color = `rgb(${val}, ${val}, ${val})`;
-        } else {
-          item.style.color = isUnder ? '#333' : '#333';
-        }
-      });
-    };
+    }
 
     navItems.forEach((item) => {
       item.addEventListener('click', () => {
-        const prev = activeItem;
-        activeItem = item;
         navItems.forEach((nav) => nav.classList.remove('active'));
         item.classList.add('active');
-
-        const animation = animateBlob(prev || item, item);
-        let startTime = null;
-
-        animation.onfinish = () => {
-          updateBlob();
-          updateTextColor(1);
-        };
-
-        animation.onupdate = () => {
-          if (!startTime) startTime = performance.now();
-          const progress = Math.min((performance.now() - startTime) / 300, 1);
-          updateTextColor(progress);
-        };
+        activeItem = item;
+        updateBlob();
       });
-
-      item.addEventListener('mouseover', () => {
-        if (item !== activeItem) {
-          const animation = animateBlob(blob, item);
-          animation.onupdate = () => updateTextColor(0);
-          animation.onfinish = () => updateTextColor(0);
-        }
-      });
-
-      item.addEventListener('mouseout', () => {
-        if (item !== activeItem) {
-          const animation = animateBlob(blob, activeItem);
-          animation.onfinish = () => updateTextColor(1);
-        }
-      });
+      item.addEventListener('mouseover', () => animateBlob(blob, item));
+      item.addEventListener('mouseout', () => animateBlob(blob, activeItem));
     });
 
     updateBlob();
-    updateTextColor(1);
   }
 
   // Deal Product Slider
