@@ -1,0 +1,522 @@
+<?php
+session_start();
+
+// Generate a CSRF token if it's not already set
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neospace Integrals</title>
+  <meta name="description" content="NEO SPACE INTEGRALS manufactures modular kitchens, wardrobes, office systems, and custom furniture components using precision panel processing for residential, commercial, and retail spaces." />
+  <meta name="keywords" content="NEO SPACE INTEGRALS, Modular Kitchen Cabinets, Modular Wardrobes, Modular Office Systems, Edge Banding, Panel Processing, Custom Furniture, Storage Units, Workstations, Pedestals, Residential Furniture, Office Furniture, Retail Fixtures, Interior Solutions" />
+  <meta name="author" content="NEO SPACE INTEGRALS" />
+  <meta name="robots" content="index, follow" />  
+  <!-- Open Graph / Facebook -->
+  <link rel="stylesheet" href="vendor/css/swiper-bundle.min.css">  
+  <link rel="stylesheet" href="vendor/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="vendor/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="vendor/css/all.min.css" />
+  <link rel="stylesheet" href="vendor/css/brands.min.css"/>
+   <!--favicons-->
+   <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="..img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+   <link rel="icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+   <link rel="manifest" href="img/favicon/site.webmanifest">
+ 
+</head>
+<body>
+	<!-- Header-nav -->
+	<header class="header">
+		<div class="logo"><img src="../img/logo/logo.svg" alt="Neospace Integrals"/></div>
+		<nav>
+		  <ul>			
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="products.html">Products</a></li>
+			<!--<li><a href="gallery.html">Gallery</a></li>-->
+			<li class="active"><a href="#">Contact</a></li>
+			<li id="blob"></li>
+		  </ul>	  
+		</nav>	
+		<!-- New-Get-uin-Touch-sidebar -->
+		<div class="right-sidebar-button">
+			<svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" style="fill: white;">
+				<rect width="11.2" height="1.4" rx="0.699998"></rect>
+				<rect x="2.80078" y="5.6" width="11.2" height="2.79999" rx="1.4"></rect>
+				<rect y="12.6" width="11.2" height="1.4" rx="0.699998"></rect>
+			</svg>
+			<span>GET IN TOUCH</span>
+		</div>
+		<div class="right-sidebar-menu">
+			<div class="right-sidebar-menu-wrap">
+				<div class="sidebar-logo-area d-flex justify-content-between align-items-center">
+					<div class="sidebar-logo-wrap">
+						<a href="index.html"><img alt="NEOSPACE INTEGRALS" src="../img/logo/logo.svg"></a>
+					</div>
+					<div class="right-sidebar-close-btn">
+						<i class="fas fa-times"></i>
+					</div>
+				</div>
+				<div class="sidebar-content-wrap">
+					<div class="title-area">
+						<span>Get In Touch With Us</span>
+						<h2>Connect with Neospace Integrals</h2>
+						<p>Ready to take the first step toward transforming your space, achieving your vision, and embracing intelligent design with Neospace Integrals?</p>
+					</div>
+					<ul class="contact-area">
+						<li>
+							<div class="single-contact">
+								<div class="icon">
+									<i class="fas fa-phone-square-alt"></i>
+								</div>
+								<div class="content">
+									<span>CALL ANY TIME</span>
+									<h6><a href="tel:29658718617">+91 9880228288</a></h6>
+									<h6><a href="tel:29658718617">+91 8722237222</a></h6>
+								</div>
+							</div>
+							<svg class="arrow" width="8" height="29" viewBox="0 0 8 29" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.33333 3C1.33333 4.47276 2.52724 5.66667 4 5.66667C5.47276 5.66667 6.66667 4.47276 6.66667 3C6.66667 1.52724 5.47276 0.333333 4 0.333333C2.52724 0.333333 1.33333 1.52724 1.33333 3ZM3.64645 28.3536C3.84171 28.5488 4.15829 28.5488 4.35355 28.3536L7.53553 25.1716C7.7308 24.9763 7.7308 24.6597 7.53553 24.4645C7.34027 24.2692 7.02369 24.2692 6.82843 24.4645L4 27.2929L1.17157 24.4645C0.976311 24.2692 0.659728 24.2692 0.464466 24.4645C0.269204 24.6597 0.269204 24.9763 0.464466 25.1716L3.64645 28.3536ZM3.5 3V28H4.5V3H3.5Z"></path>
+							</svg>
+						</li>
+						<li>
+							<div class="single-contact social">
+								<div class="icon">
+									<i class="fa fa-globe"></i>
+								</div>
+								<div class="content">
+									<span>Follow Us</span>
+									<h6><a href="https://www.facebook.com/">Facebook,</a> <a href="https://www.linkedin.com/">LinkedIn,</a> <a href="https://www.instagram.com/">Instagram,</a></h6>
+								</div>
+							</div>
+							<svg class="arrow" width="8" height="29" viewBox="0 0 8 29" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.33333 3C1.33333 4.47276 2.52724 5.66667 4 5.66667C5.47276 5.66667 6.66667 4.47276 6.66667 3C6.66667 1.52724 5.47276 0.333333 4 0.333333C2.52724 0.333333 1.33333 1.52724 1.33333 3ZM3.64645 28.3536C3.84171 28.5488 4.15829 28.5488 4.35355 28.3536L7.53553 25.1716C7.7308 24.9763 7.7308 24.6597 7.53553 24.4645C7.34027 24.2692 7.02369 24.2692 6.82843 24.4645L4 27.2929L1.17157 24.4645C0.976311 24.2692 0.659728 24.2692 0.464466 24.4645C0.269204 24.6597 0.269204 24.9763 0.464466 25.1716L3.64645 28.3536ZM3.5 3V28H4.5V3H3.5Z"></path>
+							</svg>
+						</li>
+						<li>
+							<div class="single-contact">
+								<div class="icon">
+									<i class="far fa-paper-plane"></i>
+								</div>
+								<div class="content">
+									<span>SAY HELLO</span>
+									<h6><a href="mailto:info@example.com">info@example.com</a></h6>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="address-area">
+						<li class="single-address">
+							<span>INDIA</span>
+							<a href="#">No-1294-60/2, 2nd Main Road, Srinivasa Layout, Kaval Byrasandra, RT Nagar Post, Bangalore, Karnataka 560032</a>
+						</li>						
+					</ul>
+					<a href="contact.php" class="all-location-btn">View Factory Location</a>
+				</div>
+				<div class="sidebar-bottom-area">
+					<p>Copyright <span id="copyright-year"></span> &nbsp;<a href="index.html">NEOSPACE INTEGRALS</a></p>
+				</div>
+			</div>
+		</div>
+		<!-- Mobile Menu-->
+		<div class="sidebar__menu">
+			<button class="sidebar__menu__button">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<div class="sidebar__menu__wrapper">
+				<div class="sidebar__menu__wrapper__nav">
+					<ul class="menu-wrapper">
+						<li class="menu-item active"><a href="index.html">Home</a></li>
+						<li class="menu-item"><a href="about.html">About</a></li>
+						<!--<li class="menu-item"><a href="#">Gallery</a></li>-->
+						<li class="menu-item"><a href="products.html">Products</a></li>
+						<li class="menu-item"><a href="#">Contact</a></li>
+						<li id="blob-mobile"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Breadcrumb -->
+	<section class="breadcrumb-header style-2">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="banner">
+						<h1>Connect</h1>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><i class="fas fa-angle-right"></i></li>
+							<li>Contact us</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact Us Form -->
+	<div class="inner-contact-section two pt-7 mb-5" id="scroll-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="row gy-5 align-items-center">
+                    <div class="col-lg-4 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div class="contact-content">
+                            <div class="section-title two">
+                                <span>
+                                    <svg width="9" height="14" viewBox="0 0 9 14" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.98296 6.85403C8.95783 6.74844 8.90581 6.65097 8.83186 6.57091C8.7579 6.49085 8.66448 6.43086 8.56049 6.39665L5.40652 5.35573L7.64645 0.92109C7.78706 0.642066 7.70293 0.302757 7.44742 0.120036C7.19067 -0.0620481 6.83912 -0.0346848 6.61687 0.186515L0.188418 6.55014C0.11097 6.62683 0.0545794 6.72182 0.024588 6.82611C-0.00540343 6.9304 -0.008003 7.04055 0.0170357 7.14612C0.042173 7.25171 0.0941932 7.34917 0.168144 7.42923C0.242096 7.50929 0.335517 7.56928 0.439513 7.60349L3.59348 8.64441L1.35355 13.0791C1.21294 13.3581 1.29707 13.6974 1.55258 13.8801C1.80847 14.0616 2.15934 14.0351 2.38313 13.8136L8.81158 7.45C8.88903 7.37332 8.94542 7.27833 8.97541 7.17403C9.0054 7.06974 9.008 6.95959 8.98296 6.85403Z"/>
+                                    </svg>
+                                    Get In Touch
+                                </span>
+                                <h2>Connect With Us</h2>
+                            </div>
+                          
+                            <ul class="contact-list">
+                                <li class="single-contact">
+                                    <div class="icon">
+                                        <svg width="28" height="29" viewBox="0 0 28 29" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M27.2653 21.6503L21.598 17.8709C20.8788 17.3951 19.9147 17.5516 19.383 18.2306L17.7322 20.3531C17.6296 20.4885 17.4816 20.5822 17.3154 20.6172C17.1492 20.6522 16.9759 20.626 16.8275 20.5435L16.5134 20.3704C15.4725 19.803 14.1772 19.0966 11.5675 16.486C8.95784 13.8754 8.25001 12.5792 7.6826 11.5401L7.51042 11.2261C7.42683 11.0776 7.39968 10.904 7.43398 10.7372C7.46827 10.5703 7.56169 10.4215 7.69704 10.318L9.81816 8.66771C10.4968 8.13596 10.6536 7.17218 10.1784 6.45276L6.39895 0.785457C5.91192 0.0528623 4.9348 -0.167058 4.18082 0.286179L1.81096 1.70976C1.06634 2.1475 0.520053 2.85649 0.286612 3.68811C-0.56677 6.79751 0.0752209 12.1639 7.98033 20.0699C14.2687 26.3578 18.9501 28.0487 22.1677 28.0487C22.9083 28.0519 23.6459 27.9555 24.3608 27.7623C25.1925 27.5291 25.9016 26.9828 26.3391 26.2379L27.7641 23.8695C28.218 23.1153 27.9982 22.1376 27.2653 21.6503ZM26.9601 23.3907L25.5384 25.7606C25.2242 26.2982 24.7142 26.6934 24.1152 26.8636C21.2447 27.6517 16.2298 26.9989 8.64053 19.4097C1.0513 11.8205 0.398595 6.80593 1.18669 3.93499C1.35709 3.33524 1.75283 2.82463 2.2911 2.50999L4.66096 1.08827C4.98811 0.891426 5.41221 0.986841 5.62354 1.30475L7.67659 4.38708L9.39976 6.97156C9.60612 7.28361 9.53831 7.70186 9.24392 7.93277L7.1223 9.5831C6.47665 10.0768 6.29227 10.9701 6.68979 11.6791L6.85826 11.9852C7.45459 13.0789 8.19599 14.4395 10.9027 17.1458C13.6095 19.852 14.9696 20.5935 16.0628 21.1897L16.3694 21.3586C17.0783 21.7561 17.9716 21.5718 18.4653 20.9261L20.1157 18.8045C20.3466 18.5103 20.7647 18.4425 21.0769 18.6487L26.7437 22.4281C27.0618 22.6393 27.1572 23.0636 26.9601 23.3907ZM15.8658 4.71888C20.2446 4.72374 23.7931 8.27227 23.798 12.6511C23.798 12.9088 24.0069 13.1176 24.2646 13.1176C24.5223 13.1176 24.7312 12.9088 24.7312 12.6511C24.7257 7.75708 20.7598 3.79107 15.8658 3.78572C15.6081 3.78572 15.3992 3.99459 15.3992 4.2523C15.3992 4.51 15.6081 4.71888 15.8658 4.71888Z"/>
+                                            <path
+                                                d="M15.865 7.51812C18.6983 7.52145 20.9943 9.81744 20.9976 12.6507C20.9976 12.7745 21.0468 12.8931 21.1343 12.9806C21.2218 13.0681 21.3404 13.1173 21.4642 13.1173C21.5879 13.1173 21.7066 13.0681 21.7941 12.9806C21.8816 12.8931 21.9308 12.7745 21.9308 12.6507C21.9269 9.30225 19.2134 6.58879 15.865 6.58496C15.6073 6.58496 15.3984 6.79384 15.3984 7.05154C15.3984 7.30924 15.6073 7.51812 15.865 7.51812Z"/>
+                                            <path
+                                                d="M15.865 10.3179C17.1528 10.3195 18.1964 11.3631 18.198 12.6509C18.198 12.7747 18.2472 12.8934 18.3347 12.9809C18.4222 13.0684 18.5409 13.1175 18.6646 13.1175C18.7883 13.1175 18.907 13.0684 18.9945 12.9809C19.082 12.8934 19.1312 12.7747 19.1312 12.6509C19.1291 10.8479 17.668 9.38679 15.865 9.38477C15.6073 9.38477 15.3984 9.59364 15.3984 9.85135C15.3984 10.109 15.6073 10.3179 15.865 10.3179Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="content">
+                                        <span>To More Inquiry</span>
+                                        <h6><a href="tel:+990737621432">+91 8722237222</a></h6>
+                                    </div>
+                                </li>
+                                <li class="single-contact">
+                                    <div class="icon">
+                                        <svg width="26" height="27" viewBox="0 0 26 27" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.5357 14.7807C12.5645 14.7761 11.5995 14.6238 10.674 14.3291C9.94765 14.0861 9.29874 13.6547 8.79356 13.079C8.28837 12.5032 7.945 11.8037 7.79849 11.0519C7.47219 9.48065 8.06715 7.81927 9.42953 6.49329C9.57589 6.35083 9.72797 6.21437 9.88539 6.08423C10.5726 5.50885 11.3895 5.10936 12.2657 4.92024C13.1418 4.73113 14.0508 4.75807 14.9141 4.99875C15.7422 5.26315 16.4681 5.77731 16.9922 6.47069C17.5164 7.16406 17.8131 8.00266 17.8417 8.87139C17.9052 9.89612 17.5712 10.9059 16.9092 11.6906C16.6587 12.006 16.3262 12.2464 15.9481 12.3852C15.57 12.524 15.161 12.5559 14.7659 12.4775C14.6029 12.4437 14.4484 12.3773 14.3116 12.2824C14.1749 12.1875 14.0586 12.0659 13.9699 11.925C13.8903 11.7882 13.8391 11.6367 13.8195 11.4795C13.7998 11.3224 13.8121 11.163 13.8555 11.0107C14.2347 9.57814 14.6199 7.40111 14.6238 7.37945C14.6337 7.32339 14.6546 7.26984 14.6852 7.22184C14.7158 7.17385 14.7555 7.13235 14.8021 7.09972C14.8488 7.06708 14.9014 7.04396 14.957 7.03165C15.0125 7.01935 15.07 7.01812 15.126 7.02802C15.1821 7.03792 15.2356 7.05876 15.2836 7.08936C15.3316 7.11996 15.3731 7.15971 15.4058 7.20635C15.4384 7.25298 15.4615 7.30559 15.4738 7.36116C15.4861 7.41674 15.4874 7.47419 15.4775 7.53024C15.4614 7.62081 15.0818 9.76491 14.6936 11.2322C14.6799 11.2724 14.6746 11.315 14.6779 11.3574C14.6813 11.3998 14.6932 11.4411 14.7131 11.4787C14.773 11.5616 14.8634 11.6172 14.9644 11.6334C15.2063 11.6738 15.4547 11.6473 15.6827 11.5568C15.9106 11.4663 16.1095 11.3152 16.2579 11.1199C16.772 10.5049 17.0296 9.7155 16.9772 8.91559C16.9565 8.22404 16.7224 7.55583 16.3068 7.00265C15.8913 6.44948 15.3147 6.03845 14.6563 5.82597C13.9309 5.62644 13.1679 5.6064 12.433 5.76758C11.6982 5.92876 11.0136 6.26631 10.4383 6.75112C10.2992 6.86682 10.1636 6.98772 10.0336 7.11425C9.3602 7.76944 8.28425 9.12922 8.64694 10.8755C8.76668 11.4751 9.04098 12.0329 9.44268 12.4938C9.84437 12.9547 10.3595 13.3027 10.9371 13.5032C12.9694 14.1515 15.89 14.2299 17.4283 12.3168C17.5012 12.2301 17.6051 12.1754 17.7178 12.1643C17.8305 12.1533 17.943 12.1868 18.0313 12.2577C18.1196 12.3287 18.1766 12.4313 18.1902 12.5437C18.2038 12.6562 18.1728 12.7694 18.1039 12.8593C16.9659 14.2745 15.2344 14.7807 13.5357 14.7807Z"/>
+                                            <path
+                                                d="M12.0531 12.5345C11.595 12.5425 11.1481 12.3923 10.7878 12.1094C9.9562 11.4438 9.93324 10.2872 10.1664 9.49989C10.2452 9.23772 10.3505 8.98423 10.4814 8.74373C10.8065 8.08771 11.3264 7.54817 11.9699 7.19892C12.3602 6.99647 12.8052 6.92491 13.2393 6.99483C13.6734 7.06474 14.0735 7.27242 14.3805 7.58718C14.6932 7.92985 14.9287 8.33562 15.0712 8.7771C15.107 8.8847 15.0992 9.00205 15.0495 9.10397C14.9998 9.20589 14.9121 9.28426 14.8052 9.32226C14.6984 9.36026 14.5809 9.35486 14.478 9.30721C14.3751 9.25957 14.295 9.17348 14.2548 9.06743C14.1521 8.74138 13.9813 8.44082 13.7539 8.18561C13.5751 8.00269 13.3414 7.88325 13.0884 7.84546C12.8354 7.80768 12.577 7.85363 12.3525 7.97631C11.8699 8.24849 11.4821 8.66172 11.241 9.16059C11.1398 9.34758 11.058 9.54448 10.9971 9.74818C10.8285 10.3176 10.8658 11.0612 11.3303 11.433C11.8381 11.8411 12.6953 11.6687 13.1776 11.2527C13.5368 10.9291 13.8454 10.5534 14.0932 10.1382C14.1232 10.0898 14.1624 10.0478 14.2087 10.0146C14.2549 9.98142 14.3073 9.95766 14.3627 9.94468C14.4181 9.9317 14.4756 9.92977 14.5317 9.93899C14.5879 9.94821 14.6417 9.96841 14.6901 9.99843C14.7384 10.0284 14.7804 10.0677 14.8136 10.1139C14.8468 10.1602 14.8706 10.2125 14.8836 10.2679C14.8966 10.3234 14.8985 10.3808 14.8893 10.437C14.88 10.4932 14.8598 10.547 14.8298 10.5953C14.5361 11.0845 14.1705 11.5267 13.7452 11.907C13.2714 12.3068 12.673 12.5287 12.0531 12.5345Z"/>
+                                            <path
+                                                d="M24.6996 26.0522H1.29998C0.955309 26.0519 0.624854 25.9148 0.381135 25.6711C0.137416 25.4274 0.000344239 25.0969 8.47364e-08 24.7523V8.71919C-5.14206e-05 8.63681 0.023378 8.55613 0.0675423 8.48659C0.111707 8.41706 0.174776 8.36155 0.249359 8.32658C0.323942 8.29161 0.406948 8.27862 0.488649 8.28914C0.57035 8.29965 0.647361 8.33324 0.710655 8.38596L11.3428 17.2224C11.8091 17.6077 12.3952 17.8185 13.0002 17.8185C13.6052 17.8185 14.1913 17.6077 14.6577 17.2224L25.2889 8.38553C25.3523 8.33278 25.4293 8.29919 25.511 8.28869C25.5928 8.27819 25.6758 8.29121 25.7504 8.32624C25.825 8.36126 25.8881 8.41684 25.9322 8.48643C25.9763 8.55603 25.9997 8.63678 25.9996 8.71919V24.7523C25.9992 25.0969 25.8622 25.4274 25.6184 25.6711C25.3747 25.9148 25.0443 26.0519 24.6996 26.0522ZM0.866653 9.64261V24.7523C0.866653 24.9915 1.06078 25.1856 1.29998 25.1856H24.6996C24.8145 25.1856 24.9247 25.1399 25.006 25.0587C25.0873 24.9774 25.1329 24.8672 25.1329 24.7523V9.64261L15.2106 17.8888C14.5887 18.4028 13.807 18.6841 13.0002 18.6843C12.1933 18.6844 11.4116 18.4034 10.7894 17.8897L0.866653 9.64261Z"/>
+                                            <path
+                                                d="M0.434172 9.15257C0.342147 9.15275 0.252454 9.12363 0.178087 9.06943C0.103719 9.01522 0.0485401 8.93875 0.020542 8.85108C-0.00745601 8.76342 -0.00681877 8.66912 0.0223615 8.58185C0.0515417 8.49457 0.10775 8.41885 0.182842 8.36565L4.08278 5.60103C4.17656 5.53455 4.29291 5.50804 4.40623 5.52734C4.51955 5.54664 4.62057 5.61017 4.68705 5.70395C4.75354 5.79773 4.78005 5.91407 4.76075 6.0274C4.74145 6.14072 4.67792 6.24174 4.58414 6.30822L0.684201 9.07284C0.611181 9.12478 0.52378 9.15265 0.434172 9.15257ZM25.5662 9.15257C25.4766 9.15265 25.3892 9.12478 25.3162 9.07284L21.4163 6.30822C21.3235 6.24141 21.2609 6.14062 21.242 6.02784C21.2232 5.91505 21.2498 5.7994 21.3159 5.7061C21.382 5.61279 21.4823 5.54939 21.5949 5.52971C21.7075 5.51003 21.8234 5.53566 21.9172 5.60103L25.8171 8.36565C25.8922 8.41881 25.9483 8.49445 25.9775 8.58164C26.0067 8.66883 26.0075 8.76305 25.9796 8.85067C25.9517 8.93829 25.8966 9.01477 25.8224 9.06904C25.7482 9.12331 25.6582 9.15257 25.5662 9.15257ZM17.0041 3.086C16.9144 3.08609 16.8269 3.05822 16.7537 3.00627L14.6824 1.5373C14.2165 1.1435 13.6271 0.925757 13.0171 0.922035C12.4071 0.918313 11.8151 1.12885 11.3445 1.51693L9.24716 3.00627C9.15339 3.07276 9.03704 3.09926 8.92371 3.07996C8.81039 3.06066 8.70937 2.99714 8.64289 2.90336C8.57641 2.80958 8.5499 2.69323 8.5692 2.57991C8.5885 2.46658 8.65203 2.36557 8.7458 2.29908L10.8171 0.830107C11.4376 0.322712 12.2154 0.0471795 13.017 0.0508168C13.8186 0.0544541 14.5938 0.337035 15.2097 0.85004L17.255 2.29908C17.3301 2.35228 17.3863 2.428 17.4155 2.51528C17.4447 2.60255 17.4453 2.69685 17.4173 2.78451C17.3893 2.87218 17.3342 2.94865 17.2598 3.00286C17.1854 3.05706 17.0957 3.08618 17.0037 3.086H17.0041ZM0.715401 25.8183C0.626173 25.8185 0.539066 25.7911 0.465979 25.7399C0.392892 25.6887 0.337387 25.6162 0.307046 25.5323C0.276706 25.4484 0.273008 25.3572 0.296459 25.2711C0.31991 25.185 0.369366 25.1083 0.438072 25.0513L10.3266 16.8355C10.3704 16.7991 10.4209 16.7717 10.4753 16.7549C10.5296 16.738 10.5868 16.7321 10.6435 16.7373C10.7001 16.7426 10.7552 16.7589 10.8056 16.7855C10.8559 16.812 10.9006 16.8482 10.9369 16.892C10.9733 16.9358 11.0007 16.9863 11.0175 17.0407C11.0343 17.0951 11.0403 17.1522 11.0351 17.2089C11.0298 17.2656 11.0134 17.3206 10.9869 17.371C10.9604 17.4213 10.9242 17.466 10.8804 17.5023L0.991863 25.7182C0.914246 25.7829 0.816424 25.8183 0.715401 25.8183ZM25.2846 25.8183C25.1835 25.8184 25.0857 25.783 25.0081 25.7182L15.1196 17.5023C15.0747 17.4664 15.0374 17.4218 15.0099 17.3712C14.9824 17.3207 14.9652 17.2651 14.9594 17.2079C14.9536 17.1506 14.9593 17.0928 14.9761 17.0377C14.9929 16.9827 15.0205 16.9315 15.0573 16.8872C15.0941 16.843 15.1393 16.8065 15.1903 16.7799C15.2414 16.7533 15.2972 16.7371 15.3546 16.7323C15.4119 16.7276 15.4697 16.7343 15.5244 16.752C15.5791 16.7698 15.6298 16.7983 15.6734 16.8359L25.5619 25.0518C25.6306 25.1087 25.6801 25.1854 25.7035 25.2715C25.727 25.3576 25.7233 25.4489 25.6929 25.5328C25.6626 25.6167 25.6071 25.6892 25.534 25.7404C25.4609 25.7915 25.3738 25.8185 25.2846 25.8183Z"/>
+                                            <path
+                                                d="M21.6668 12.3935C21.5518 12.3935 21.4416 12.3479 21.3604 12.2666C21.2791 12.1853 21.2334 12.0751 21.2334 11.9602V3.08914C21.2321 3.09781 21.2148 3.08568 21.1858 3.08568H4.81471C4.80523 3.0851 4.79574 3.08646 4.7868 3.08966C4.77786 3.09287 4.76967 3.09785 4.76271 3.10431L4.76704 11.9602C4.76704 12.0751 4.72139 12.1853 4.64013 12.2666C4.55886 12.3479 4.44864 12.3935 4.33372 12.3935C4.21879 12.3935 4.10857 12.3479 4.02731 12.2666C3.94604 12.1853 3.90039 12.0751 3.90039 11.9602V3.08568C3.9072 2.84967 4.00723 2.62597 4.17859 2.46354C4.34994 2.30111 4.57867 2.21319 4.81471 2.21902H21.1858C21.4218 2.21319 21.6505 2.30111 21.8219 2.46354C21.9933 2.62597 22.0933 2.84967 22.1001 3.08568V11.9602C22.1001 12.0751 22.0544 12.1853 21.9732 12.2666C21.8919 12.3479 21.7817 12.3935 21.6668 12.3935Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="content">
+                                        <span>To Send Mail</span>
+                                        <h6><a href="mailto:neospace@gmail.com">neospace@gmail.com</a></h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+					<div class="col-lg-8 wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+						<div class="contact-form-wrap two">
+							<form novalidate>
+							   <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+								<div class="row g-4">
+									<div class="col-md-12">
+										<div class="form-inner">
+											<label>Full Name *</label>
+											<input type="text" name="full_name" required>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-inner">
+											<label>Email *</label>
+											<input type="email" name="email" required>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-inner">
+											<label>Phone *</label>
+											<input type="tel" name="phone" required>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-inner">
+											<label>Subject</label>
+											<input type="text" name="subject" required>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-inner">
+											<label>Message *</label>
+											<textarea name="message" required></textarea>
+										</div>
+									</div>
+									<!-- Honeypot fields (hidden) -->
+									<div style="display: none;">
+										<input type="text" name="website">
+										<input type="text" name="url">
+									</div>
+								</div>
+								<button type="submit" class="primary-btn4 btn-hover black-bg">
+									Submit Now
+								    <i class="fas fa-arrow-right"></i>
+									<span></span>
+								</button>
+							</form>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<br>
+	<!--Google map-->
+	 <div class="contact-page-address-section mb-5">
+        <div class="container">
+            <h6 class="mb-5"><a href="contact.html">View Our Factory Location</a></h6>
+            <ul class="address-list">
+                <li class="single-address">
+                    <span>INDIA</span>
+                   <a href="https://www.google.com/maps?q=No-1294-60/2,+2nd+Main+Road,+Srinivasa+Layout,+Kaval+Byrasandra,+RT+Nagar+Post,+Bangalore,+Karnataka+560032" target="_blank" rel="noopener noreferrer">
+					  No-1294-60/2, 2nd Main Road, Srinivasa Layout, Kaval Byrasandra, RT Nagar Post, Bangalore, Karnataka 560032
+					</a>
+					
+                </li>
+			</ul>
+		</div>
+	</div>
+	 <!-- Contact Map Section Start -->
+    <div class="contact-map-section mb-120">        
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1441666485603!2d77.60775027585767!3d13.026489913670883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1755c8d04b39%3A0xeab72b373f01ed8c!2sWudSpace!5e0!3m2!1sen!2sin!4v1752313800020!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>       
+    </div>
+    <!-- Contact Map Section End -->
+	<!--fotter-->
+	<section id="footer">
+		<div class="footer">
+			<div class="container">
+				<div class="widget-area">
+					<div class="row justify-content-between">
+						<div class="col-md-6 col-lg-6 col-xl-auto">
+							<div class="widget footer-widget">
+								<div class="th-widget-about">
+									<div class="about-logo">
+										<a href="#"><img src="img/nsi.webp" alt="NSI"></a>
+									</div>
+								   <h3 class="widget_title">Address</h3>
+									<div class="th-widget-contact">
+										<p class="footer-info"><i class="fa-solid fa-location-dot"></i>&nbsp; RT nagar Post, Bangalore</p>
+										<p class="footer-info"><i class="fa-solid fa-envelope"></i>&nbsp; <a class="text-inherit" href="mailto:info@kitar.com">Email: info@neospace.com</a></p>
+										<p class="footer-info"><i class="fa-solid fa-phone"></i>&nbsp; <a class="text-inherit" href="tel:+1636422567">Phone: +91 8722232222</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-xl-auto">
+							<div class="widget widget_nav_menu footer-widget">
+							  <h3 class="widget_title">Quick Links</h3>
+								<div class="menu-all-pages-container">
+									<ul class="footer-menu">
+										<li><a href="#about"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; About Us</a></li>
+										<li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Our Classes</a></li>
+										<li><a href="#teachers"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Expert Teacher</a></li>
+										<li><a href="#contact"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Contact Us</a></li>
+										<li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Our Services</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-xl-auto">
+							<div class="widget widget_nav_menu footer-widget">
+							  <h3 class="widget_title">Services</h3>
+								<div class="menu-all-pages-container">
+									<ul class="footer-menu">
+										<li><a href="#about"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; About Us</a></li>
+										<li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Our Classes</a></li>
+										<li><a href="#teachers"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Expert Teacher</a></li>
+										<li><a href="#contact"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Contact Us</a></li>
+										<li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>&nbsp; Our Services</a></li>							
+									</ul>
+							   </div>
+							</div>
+						</div>
+						<div class="col-md-6 col-xl-auto">
+						   <div class="widget footer-widget">
+							  <h3 class="widget_title">Working Hours</h3>								
+								<ul class="footer-menu">
+									<li>Mon - Sat: 10:00 AM - 8:00 PM</li>
+									<li>Sun: Closed</li>
+									<li>Closed On all major Festivals </li><br>
+									<li class="list-social__item">
+										<a href="#" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+											<i class="fab fa-twitter"></i>
+											<span class="visually-hidden">Twitter</span>
+										</a>
+									</li>
+									<li class="list-social__item">
+										<a href="#" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+											<i class="fab fa-facebook-f"></i>
+											<span class="visually-hidden">Facebook</span>
+										</a>
+									</li>
+									<li class="list-social__item">
+										<a href="#" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+											<i class="fab fa-google"></i>
+											<span class="visually-hidden">Google</span>
+										</a>
+									</li>
+									<li class="list-social__item">
+										<a href="#" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+											<i class="fab fa-instagram"></i>
+											<span class="visually-hidden">Instagram</span>
+										</a>
+									</li>
+								</ul>					               
+						   </div>
+						</div>
+					</div>
+				</div>
+			</div>
+							
+		</div>
+	</section>
+    <!-- Dynamic Footer-Year -->	
+	<div id="footer-year"></div>	
+	<!-- WhatsApp chat component -->
+	<section id="whatsapp-container">
+		<div class="whatsapp-container">
+			<div class="whatsapp-btn" id="whatsapp-btn" aria-label="Toggle WhatsApp chat">
+			  <div class="wa__btn_popup_txt"><span>Need Help? <strong>Chat with us</strong></span></div>
+			  <!-- WhatsApp button -->
+			  <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+				 <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+			  </svg>
+			  <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+				 <path d="M231.6 256l107.7-107.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 
+					78.6 103c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 33.3 
+					363.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3 
+					294 409c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+			  </svg>
+			</div>
+		   <!-- Chat popup/menu -->
+			<div class="chat-popup" id="chat-popup">
+			    <!-- Header -->
+			    <div class="popup-header">
+					 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+						<path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+					 </svg>
+					 WhatsApp Chat
+			    </div>
+			    <div class="chat-container">
+					 <!-- Agent option 1: Design Consultant -->
+					 <a href="https://wa.me/1234567890" class="agent-option" target="_blank">
+					 <div class="whatsapp-logo">
+						<svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.891 3.426"/>
+						</svg>
+					</div>				
+ 					  &nbsp;&nbsp; <span class="agent-name">Design Consultant</span>
+					 </a>
+					 <!-- Agent option 2: Sales Manager -->
+					 <a href="https://wa.me/9876543210" class="agent-option" target="_blank">
+					  <div class="whatsapp-logo">
+						<svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.891 3.426"/>
+						</svg>
+					</div>						
+						&nbsp;&nbsp; <span class="agent-name">Sales Manager</span>
+					 </a>
+					 <!-- Agent option 3: Customer Support -->
+					 <a href="https://wa.me/5551234567" class="agent-option" target="_blank">
+					  <div class="whatsapp-logo">
+						<svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.891 3.426"/>
+						</svg>
+					</div>						
+						&nbsp;&nbsp; <span class="agent-name">Customer Support</span>
+					 </a>
+					 <!-- Agent option 4: Technical Expert -->
+					 <a href="https://wa.me/3335557777" class="agent-option" target="_blank">
+					  <div class="whatsapp-logo">
+						<svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.891 3.426"/>
+						</svg>
+					</div>						
+						&nbsp;&nbsp; <span class="agent-name">Technical Expert</span>
+					 </a>
+					 <!-- Select agent text -->
+					 <div class="select-agent">Select an agent</div>
+					 <!-- Arrow pointer to WhatsApp button -->
+					 <div class="chat-arrow"></div>
+			    </div>
+			</div>
+		</div>
+	</section>	
+	<!-- Scroll to Top Button with SVG Progress Circle -->
+	<a href="#" class="scroll-top" id="scrollTopBtn">
+		<svg class="scroll-top__circle" width="100%" height="100%" viewBox="-4 -4 108 108">
+			<path id="progressPath"
+				  d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+				  style="stroke-dasharray: 307.919; stroke-dashoffset: 307.919;">
+			</path>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white">
+			<path d="m12 6.414 7.293 7.293 1.414-1.414L12 3.586l-8.707 8.707 1.414 1.414L12 6.414z"/>
+			<path d="m3.293 18.293 1.414 1.414L12 12.414l7.293 7.293 1.414-1.414L12 9.586l-8.707 8.707z"/>
+		</svg>
+	</a>
+
+   <!-- js -->
+    <script src="vendor/js/jquery-3.7.1.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>  	    
+    <script src="vendor/js/swiper-bundle.min.js"></script>  	
+	<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+	<script src="vendor/js/all.min.js"></script>
+	<script src="vendor/js/brands.min.js"></script>
+    <script src="js/script.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/contact-form.js"></script>
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const scrollBtn = document.getElementById('scrollTopBtn');
+		    const progressPath = document.getElementById('progressPath');
+			const pathLength = progressPath.getTotalLength();
+
+			const updateProgress = () => {
+				const scroll = window.scrollY;
+				const height = document.documentElement.scrollHeight - window.innerHeight;
+				const progress = pathLength - (scroll * pathLength / height);
+				progressPath.style.strokeDashoffset = progress;
+
+				if (scroll > 100) {
+			  scrollBtn.classList.add('visible');
+			} else {
+			  scrollBtn.classList.remove('visible');
+			}
+		};
+
+		  // Initial setup
+		  progressPath.style.strokeDasharray = pathLength;
+		  progressPath.style.strokeDashoffset = pathLength;
+
+		  updateProgress(); // On load
+
+		  window.addEventListener('scroll', updateProgress);
+
+		  scrollBtn.addEventListener('click', function (e) {
+			e.preventDefault();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		  });
+		});
+    </script>
+	<script>
+		document.getElementById("copyright-year").textContent = new Date().getFullYear();
+	</script>
+   </body>
+</html>

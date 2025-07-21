@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f2eeeb;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 1200px;
+		padding: 20px;
+		text-align: center;
+		position: relative;
+    }   
+   
+	.illustration {
+            flex: 1;
+            min-width: 43.75rem;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+        }
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-code {
+            font-size: 6rem;
+            color: #ff4d4d;
+            margin: 0;
+            font-weight: bold;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 10px 0 20px;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #555;
+        }
+        .back-button::before {
+            content: "←";
+            margin-right: 8px;
+        }
+        .bottom-right-image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            max-width: 300px;
+            height: auto;
+            z-index: 1; /* Ensure it's behind the text content */
+        }
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 4rem;
+            }
+            .error-message {
+                font-size: 1.2rem;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .bottom-right-image {
+                width: 70%;
+                max-width: 9rem;
+            }
+			.text-content{
+				
+					opacity: 1 !important;
+					visibility: visible !important;
+					transition: all 0.3s ease-out;
+			}
+						
+        }
+
+		@media (max-width: 960px){
+			.text-content {
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease-out;
+			}
+			.illustration{
+			min-width: 100%;
+			}
+		}
+  </style>
+</head>
+<body>
+   <div class="container">
+	   <div class="illustration">
+			<img src="../new/img/404/404bg.webp" alt="Person with Laptop">
+		</div>
+		<div class="text-content">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">WE COULDN'T FIND WHAT YOU'RE LOOKING FOR.</p>
+            <a href="index.html" class="back-button">BACK TO HOMEPAGE</a>
+        </div>
+		
+  </div>
+</body>
+</html>

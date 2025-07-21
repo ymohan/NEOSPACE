@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Red Button with Arrow</title>
+  <style>
+    .button-container {
+      display: flex;      
+      align-items: center;
+      max-width: 250px;
+      height: 64px;
+      background-color: #5052ff;
+      border-radius: 50px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .button-text {
+      flex: 1;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .arrow-circle {
+      width: 50px;
+      height: 50px;
+     border: 2px solid white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+	  margin: 0.5rem
+    }
+
+    .fa-arrow-right {
+      color: white;
+      font-size: 20px;
+	  transform: rotate(-45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <div class="button-text"></div>
+    <div class="arrow-circle">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+  </div>
+</body>
+</html>
