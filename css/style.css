@@ -2087,6 +2087,10 @@ nav li#blob-secondary {
 }
 
 @media (max-width: 768px) {
+  #about .abt-container {
+    display: flex ;  
+    flex-direction: column ;
+  }
 	.counters-section {
 		padding: 3.125rem 0.9375rem;
 	}
@@ -2117,13 +2121,28 @@ nav li#blob-secondary {
 	.counters-title p {
 		font-size: 1rem;
 	}
+  .video-description-wrapper {
+    display: none;
+  }
+  .image-item:not(.large) img {
+    height: 350px;
+    margin: 0 0 -4rem 0;
+  }
+ 
+}
+
+@media (max-width: 620px) {
+	.charts_orb {
+    display: flex;
+    flex-direction: column;   
+   }
 }
 
 @media (max-width: 520px) {
 	.charts_orb {
 		grid-template-columns: 1fr;
 		gap: 1.25rem;
-		max-width: 300px;
+		max-width: 100%;
 		margin: 0 auto;
 	}
 	
@@ -2152,20 +2171,12 @@ nav li#blob-secondary {
 	.counters-title h2 {
 		font-size: 1.8rem;
 	}
+  
 }
-
 
 @media (max-width: 480px) {           
 	.main-title {
 		font-size: 1.75rem;
-	}
-
-	.images-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.image-item {
-		display: none;
 	}
 
 	.image-item.large {
