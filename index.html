@@ -904,7 +904,7 @@
     <script>
 		document.addEventListener('DOMContentLoaded', function () {
 			const scrollBtn = document.getElementById('scrollTopBtn');
-		    const progressPath = document.getElementById('progressPath');
+			const progressPath = document.getElementById('progressPath');
 			const pathLength = progressPath.getTotalLength();
 
 			const updateProgress = () => {
@@ -913,26 +913,41 @@
 				const progress = pathLength - (scroll * pathLength / height);
 				progressPath.style.strokeDashoffset = progress;
 
-				if (scroll > 100) {
-			  scrollBtn.classList.add('visible');
-			} else {
-			  scrollBtn.classList.remove('visible');
+				scrollBtn.classList.toggle('visible', scroll > 100);
+			};
+
+			// Initial setup
+			progressPath.style.strokeDasharray = pathLength;
+			progressPath.style.strokeDashoffset = pathLength;
+			updateProgress();
+
+			window.addEventListener('scroll', updateProgress);
+
+			scrollBtn.addEventListener('click', function (e) {
+				e.preventDefault();
+				smoothScrollToTop(800); // 800 ms custom scroll
+			});
+
+			// Smooth scroll function
+			function smoothScrollToTop(duration = 600) {
+				const start = window.scrollY;
+				const startTime = performance.now();
+
+				function step(currentTime) {
+				const elapsed = currentTime - startTime;
+				const progress = Math.min(elapsed / duration, 1);
+				const ease = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+				window.scrollTo(0, start * (1 - ease));
+
+				if (elapsed < duration) {
+					requestAnimationFrame(step);
+				}
+				}
+
+				requestAnimationFrame(step);
 			}
-		};
+			});
 
-		  // Initial setup
-		  progressPath.style.strokeDasharray = pathLength;
-		  progressPath.style.strokeDashoffset = pathLength;
-
-		  updateProgress(); // On load
-
-		  window.addEventListener('scroll', updateProgress);
-
-		  scrollBtn.addEventListener('click', function (e) {
-			e.preventDefault();
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		  });
-		});
     </script>
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {

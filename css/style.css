@@ -152,7 +152,7 @@ table {
 }
 
 .section-padding {
-  padding: 6.25rem 0;
+  padding: 5rem 0;
 }
 
 /* Header */
@@ -1495,6 +1495,10 @@ nav li#blob-secondary {
 	margin-bottom: 5px;
 }
 
+.overview-section .images-grid{
+  height: auto
+}
+
 .overview-content h2 {
 	color: #404040;
 	font-size: clamp(1.5rem, -0.5rem + 4vw, 2.2rem);
@@ -1512,7 +1516,6 @@ nav li#blob-secondary {
 	}
 
 }
-
 
 .overview-content p {
 	margin: 0 0 0 0;
