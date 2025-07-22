@@ -191,6 +191,8 @@ nav ul {
   align-items: center;
   margin: 0;
   position: relative; /* Ensure blob is positioned relative to nav */
+  padding: 0;
+  overflow: hidden
 }
 
 nav ul li {
@@ -202,6 +204,7 @@ nav ul li {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   border-radius: 1.5625rem;
   z-index: 1; /* Ensure nav items are above blob */
@@ -220,8 +223,10 @@ nav ul li#blob{
   position: absolute;
   background-color: #D28F51;
   border-radius: 1.5625rem;
+  -webkit-transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
   transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
   z-index: 0; /* Blob stays behind nav items */
+  pointer-events: none;
 }
 
 /* Breadcrumb Header */
@@ -1890,17 +1895,6 @@ nav li#blob-secondary {
 	padding: 5rem 2.25rem;			
 	position: relative;
 	overflow: hidden;
-}
-
-.counters-section::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23e2e8f0"/><circle cx="80" cy="40" r="1" fill="%23cbd5e1"/><circle cx="40" cy="80" r="1" fill="%23e2e8f0"/></svg>') repeat;
-	opacity: 0.4;
 }
 
 .counters-container {
