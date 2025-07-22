@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const machineSwiper = new Swiper('.mySwiper', {
     loop: true,
     autoplay: {
-      delay: 3500,
+      delay: 10000,
       disableOnInteraction: false
     },
     slidesPerView: 1,
@@ -468,20 +468,29 @@ function updateSelectedProduct(card) {
   descriptionElement.textContent = description;
 
   // Clear and re-add highlights
-highlightsList.innerHTML = ''; // 🔥 clear old highlights
+  highlightsList.innerHTML = ''; // 🔥 clear old highlights
 
-highlights.forEach((point, i) => {
-  const li = document.createElement('li');
-  li.textContent = point;
-  li.style.animationDelay = `${0.3 + i * 0.1}s`;
-  li.style.animation = 'fadeUp 0.6s ease forwards';
-  highlightsList.appendChild(li);
-});
+  highlights.forEach((point, i) => {
+    const li = document.createElement('li');
+    
+    // Add icon
+    const icon = document.createElement('i');
+    icon.className = 'fa-solid fa-circle-dot';
+    icon.style.marginRight = '0.5rem';
+    li.appendChild(icon);
 
+    // Add text
+    li.appendChild(document.createTextNode(point));
+
+    // Animation styling
+    li.style.animationDelay = `${0.3 + i * 0.1}s`;
+    li.style.animation = 'fadeUp 0.6s ease forwards';
+
+    highlightsList.appendChild(li);
+  });
 
   // Re-add the active class to trigger animations
   selectedProduct.classList.add('active');
-  
 
   // Update card active states
   document.querySelectorAll('.product-card').forEach(c => c.classList.remove('active'));
@@ -498,4 +507,4 @@ document.addEventListener('DOMContentLoaded', () => {
   const defaultCard = document.querySelector('.product-card.active') || cards[0];
   if (defaultCard) updateSelectedProduct(defaultCard);
 });
-	
+

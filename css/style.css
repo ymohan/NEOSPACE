@@ -1582,6 +1582,10 @@ nav li#blob-secondary {
    	flex: 0 0 100%; /* 1 column layout on smaller screens */
    	max-width: 100%;
    }
+
+   .images-grid .image-item{
+    display: none;
+   }
 }
 
 .overview-content .features-list li span:hover {
@@ -1628,19 +1632,21 @@ nav li#blob-secondary {
 	background: #fff;
 }
 .popular-machines .text-primary{
-	font-size: 0.8rem;
-	color: #FB521E !important;
+	font-size: 0.9rem;
+	color: #D28F51 !important;
 	position: relative;
+  letter-spacing: 1.5px; 
 }
-.text-primary::after{
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px;
-    height: 2px;
-    background-color: #fb521e;
-	margin: 0 0 0 0.5rem;
+.text-primary::before{
+  display: inline-block;
+  content: "";
+  position: relative;
+  bottom: 2px;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 3px;
+  background-color: #D28F51;
+  margin: 0 0.5rem 0 0.5rem;
 }
 
 .overlay p{
@@ -2191,7 +2197,8 @@ nav li#blob-secondary {
 	}
 
 	.image-item.large img {
-		height: auto;
+		height: 25rem;
+    background-size: contain;
 	}
 
 	.counters-section {
@@ -3154,10 +3161,12 @@ nav li#blob-secondary {
 }
 
 .modal-text p {
-  font-size: 1.2em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
   line-height: 1.8;
   color: #ccc;
   margin-bottom: 30px;
+  letter-spacing: 1.5px;
 }
 
 .content-section {
@@ -3485,6 +3494,10 @@ body.modal-open {
   font-size: 1.1rem;
   color: #333;
   margin: 0;
+}
+
+.product-highlights svg{
+  color: #D28F51;
 }
 
 /*contact*/
@@ -4039,10 +4052,10 @@ text-decoration: none;
    }
 
   .parallax-title {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
   }
   
-  .quote-container {
+  .write-container {
 	  flex-direction: column;
   }
    
