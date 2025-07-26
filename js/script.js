@@ -125,8 +125,30 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		// 🔥 Define updateBlob wrapper
 		function updateBlob() {
-			animateBlob(blob, activeItem);
+			if (!blob || !activeItem) return;
+		
+			const toRect = activeItem.getBoundingClientRect();
+			const parentRect = blob.parentElement.getBoundingClientRect();
+		
+			const top = toRect.top - parentRect.top;
+			const left = toRect.left - parentRect.left;
+		
+			// Disable transition during resize reposition
+			blob.style.transition = 'none';
+			blob.style.top = `${top}px`;
+			blob.style.left = `${left}px`;
+			blob.style.width = `${toRect.width}px`;
+			blob.style.height = `${toRect.height}px`;
+		
+			// Force style flush
+			void blob.offsetWidth;
+		
+			// Restore transition (you can adjust to match your CSS transition speed)
+			requestAnimationFrame(() => {
+				blob.style.transition = '';
+			});
 		}
+
 
 		navItems.forEach((item) => {
 			item.addEventListener('click', () => {
