@@ -123,6 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			);
 		}
+		// 🔥 Define updateBlob wrapper
+		function updateBlob() {
+			animateBlob(blob, activeItem);
+		}
 
 		navItems.forEach((item) => {
 			item.addEventListener('click', () => {
@@ -135,11 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.addEventListener('mouseover', () => animateBlob(blob, item));
 			item.addEventListener('mouseout', () => animateBlob(blob, activeItem));
 		});
-
-		// Initial blob position (animated on load)
-		window.addEventListener('load', () => {
-			animateBlob(blob, activeItem);
-		});
+		
 	}
 
 	// Deal Product Slider
