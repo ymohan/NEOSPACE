@@ -90,87 +90,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Navigation Blob Effect
 	const blob = document.getElementById('blob');
-	let activeItem = null;
+  let activeItem = null;
+  if (blob) {
+    const navItems = document.querySelectorAll('nav ul li:not(#blob)');
+    activeItem = document.querySelector('nav ul .active') || navItems[0];
 
-	if (blob) {
-		const navItems = document.querySelectorAll('nav ul li:not(#blob)');
-		activeItem = document.querySelector('nav ul .active') || navItems[0];
+    function updateBlob(target = activeItem) {
+      if (target) {
+        blob.style.width = `${target.clientWidth}px`;
+        blob.style.height = `${target.clientHeight}px`;
+        blob.style.left = `${target.offsetLeft}px`;
+        blob.style.top = `${target.offsetTop}px`;
+      }
+    }
 
-		function animateBlob(from, to) {
-			const blobRect = blob.getBoundingClientRect();
-			const fromRect = from.getBoundingClientRect();
-			const toRect = to.getBoundingClientRect();
+    function animateBlob(from, to) {
+      blob.animate(
+        [
+          { left: `${from.offsetLeft}px`, width: `${from.clientWidth}px` },
+          { left: `${to.offsetLeft}px`, width: `${to.clientWidth}px` },
+        ],
+        {
+          duration: 300,
+          easing: 'cubic-bezier(0.87, 0, 0.13, 1)',
+          fill: 'forwards',
+        }
+      );
+    }
 
-			const parentRect = blob.parentElement.getBoundingClientRect();
+    navItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        navItems.forEach((nav) => nav.classList.remove('active'));
+        item.classList.add('active');
+        activeItem = item;
+        updateBlob();
+      });
+      item.addEventListener('mouseover', () => animateBlob(blob, item));
+      item.addEventListener('mouseout', () => animateBlob(blob, activeItem));
+    });
 
-			blob.animate(
-				[{
-						left: `${blob.offsetLeft}px`,
-						top: `${blob.offsetTop}px`,
-						width: `${blob.offsetWidth}px`,
-						height: `${blob.offsetHeight}px`
-					},
-					{
-						left: `${to.offsetLeft}px`,
-						top: `${to.offsetTop}px`,
-						width: `${to.clientWidth}px`,
-						height: `${to.clientHeight}px`
-					}
-				], {
-					duration: 400,
-					easing: 'cubic-bezier(0.87, 0, 0.13, 1)',
-					fill: 'forwards'
-				}
-			);
-		}
-		// 🔥 Define updateBlob wrapper
-		function updateBlob() {
-			if (!blob || !activeItem) return;
-		
-			const toRect = activeItem.getBoundingClientRect();
-			const parentRect = blob.parentElement.getBoundingClientRect();
-		
-			const top = toRect.top - parentRect.top;
-			const left = toRect.left - parentRect.left;
-		
-			// Disable transition during resize reposition
-			blob.style.transition = 'none';
-			blob.style.top = `${top}px`;
-			blob.style.left = `${left}px`;
-			blob.style.width = `${toRect.width}px`;
-			blob.style.height = `${toRect.height}px`;
-		
-			// Force style flush
-			void blob.offsetWidth;
-		
-			// Restore transition (you can adjust to match your CSS transition speed)
-			requestAnimationFrame(() => {
-				blob.style.transition = '';
-			});
-		}
-
-
-		navItems.forEach((item) => {
-			item.addEventListener('click', () => {
-				navItems.forEach((nav) => nav.classList.remove('active'));
-				item.classList.add('active');
-				animateBlob(blob, item);
-				activeItem = item;
-			});
-
-			item.addEventListener('mouseover', () => animateBlob(blob, item));
-			item.addEventListener('mouseout', () => animateBlob(blob, activeItem));
-		});
-		// Handle resize (without GSAP ScrollSmoother)
-		const handleResize = debounce(() => {
-			if (blob && activeItem) {
-				updateBlob();
-			}
-		}, 100);
-	
-		window.addEventListener('resize', handleResize);
-			
-		}
+    updateBlob();
+  }
 
 	// Deal Product Slider
 	const dealSwiper = new Swiper('.deal-product-swiper', {
