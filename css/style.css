@@ -603,8 +603,8 @@ nav ul li#blob{
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-sidebar-bottom-area p{
-	margin: 0 auto;
+.sidebar-bottom-area p{
+     margin: 0 auto;
 }
 .right-sidebar-close-btn {
     height: 2rem;
