@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Navigation Blob Effect
-	const blob = document.getElementById('blob');
+		const blob = document.getElementById('blob');
 	let activeItem = null;
 
 	if (blob) {
@@ -139,7 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Initial blob position (animated on load)
 		window.addEventListener('load', () => {
 			animateBlob(blob, activeItem);
-		});
+			});
+				const handleResize = debounce(() => {
+			if (blob && activeItem) {
+				updateBlob();
+			}
+		}, 100);
+
+		window.addEventListener('resize', handleResize);
 	}
 
 
