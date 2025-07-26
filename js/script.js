@@ -89,63 +89,79 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Navigation Blob Effect
-		const blob = document.getElementById('blob');
-	let activeItem = null;
-
-	if (blob) {
-		const navItems = document.querySelectorAll('nav ul li:not(#blob)');
-		activeItem = document.querySelector('nav ul .active') || navItems[0];
-
-		function animateBlob(from, to) {
-			const blobRect = blob.getBoundingClientRect();
-			const fromRect = from.getBoundingClientRect();
-			const toRect = to.getBoundingClientRect();
-
-			const parentRect = blob.parentElement.getBoundingClientRect();
-
-			blob.animate(
-				[{
-						left: `${blob.offsetLeft}px`,
-						top: `${blob.offsetTop}px`,
-						width: `${blob.offsetWidth}px`,
-						height: `${blob.offsetHeight}px`
-					},
-					{
-						left: `${to.offsetLeft}px`,
-						top: `${to.offsetTop}px`,
-						width: `${to.clientWidth}px`,
-						height: `${to.clientHeight}px`
-					}
-				], {
-					duration: 400,
-					easing: 'cubic-bezier(0.87, 0, 0.13, 1)',
-					fill: 'forwards'
-				}
-			);
+	const blob = document.getElementById('blob');
+		let activeItem = null;
+		let currentAnimation = null;
+		
+		if (blob) {
+	const navItems = document.querySelectorAll('nav ul li:not(#blob)');
+	activeItem = document.querySelector('nav ul .active') || navItems[0];
+	
+	function animateBlob(from, to, duration = 300) {
+		// Cancel previous animation for smoother transitions
+		if (currentAnimation) {
+			currentAnimation.cancel();
 		}
-
+		
+		currentAnimation = blob.animate(
+			[{
+				left: `${blob.offsetLeft}px`,
+				top: `${blob.offsetTop}px`,
+				width: `${blob.offsetWidth}px`,
+				height: `${blob.offsetHeight}px`
+			},
+			{
+				left: `${to.offsetLeft}px`,
+				top: `${to.offsetTop}px`,
+				width: `${to.clientWidth}px`,
+				height: `${to.clientHeight}px`
+			}], {
+				duration: duration,
+				easing: 'cubic-bezier(0.87, 0, 0.13, 1)',
+				fill: 'forwards'
+			}
+		);
+		
+		currentAnimation.addEventListener('finish', () => {
+				currentAnimation = null;
+			});
+		}
+	
 		navItems.forEach((item) => {
 			item.addEventListener('click', () => {
 				navItems.forEach((nav) => nav.classList.remove('active'));
 				item.classList.add('active');
-				animateBlob(blob, item);
+				animateBlob(blob, item, 250); // Slightly faster on click
 				activeItem = item;
 			});
-
-			item.addEventListener('mouseover', () => animateBlob(blob, item));
-			item.addEventListener('mouseout', () => animateBlob(blob, activeItem));
+			
+			item.addEventListener('mouseover', () => {
+				animateBlob(blob, item, 200); // Faster hover response
+			});
+			
+			item.addEventListener('mouseout', () => {
+				animateBlob(blob, activeItem, 200);
+			});
 		});
-
+		
 		// Initial blob position (animated on load)
 		window.addEventListener('load', () => {
-			animateBlob(blob, activeItem);
-			});
-				const handleResize = debounce(() => {
+			if (activeItem) {
+				animateBlob(blob, activeItem, 400);
+			}
+		});
+	
+		// Fixed resize handler (assuming you have debounce and updateBlob functions)
+		const handleResize = debounce(() => {
 			if (blob && activeItem) {
-				updateBlob();
+				// Immediate update on resize without animation
+				blob.style.left = `${activeItem.offsetLeft}px`;
+				blob.style.top = `${activeItem.offsetTop}px`;
+				blob.style.width = `${activeItem.clientWidth}px`;
+				blob.style.height = `${activeItem.clientHeight}px`;
 			}
 		}, 100);
-
+		
 		window.addEventListener('resize', handleResize);
 	}
 
