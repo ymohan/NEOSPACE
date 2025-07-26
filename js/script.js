@@ -139,8 +139,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.addEventListener('mouseover', () => animateBlob(blob, item));
 			item.addEventListener('mouseout', () => animateBlob(blob, activeItem));
 		});
-		
-	}
+		// Handle resize (without GSAP ScrollSmoother)
+		const handleResize = debounce(() => {
+			if (blob && activeItem) {
+				updateBlob();
+			}
+		}, 100);
+	
+		window.addEventListener('resize', handleResize);
+			
+		}
 
 	// Deal Product Slider
 	const dealSwiper = new Swiper('.deal-product-swiper', {
@@ -230,14 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 	}
 
-	// Handle resize (without GSAP ScrollSmoother)
-	const handleResize = debounce(() => {
-		if (blob && activeItem) {
-			updateBlob();
-		}
-	}, 100);
-
-	window.addEventListener('resize', handleResize);
+	
 });
 
 // FAQ
